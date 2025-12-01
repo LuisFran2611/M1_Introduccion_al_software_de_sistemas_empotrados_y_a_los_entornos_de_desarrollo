@@ -36,12 +36,11 @@ int main(void) {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  printf("Arreglo original:\n");
+  printf("Vector original:\n");
   print_array(test, SIZE);
 
-  /* Ordenamos y mostramos estadísticas */
   sort_array(test, SIZE);
-  printf("\nArreglo ordenado (mayor a menor):\n");
+  printf("\n Vector ordenado (mayor a menor):\n");
   print_array(test, SIZE);
 
   print_statistics(test, SIZE);
@@ -78,7 +77,6 @@ void print_array(const unsigned char *array, unsigned int length) {
 unsigned char find_median(const unsigned char *array, unsigned int length) {
   unsigned char temp[length];
 
-  /* Copiamos para no modificar la entrada al calcular la mediana */
   for (unsigned int i = 0; i < length; i++) {
     temp[i] = array[i];
   }
@@ -124,7 +122,6 @@ unsigned char find_minimum(const unsigned char *array, unsigned int length) {
 }
 
 void sort_array(unsigned char *array, unsigned int length) {
-  /* Ordenamiento por selección de mayor a menor */
   for (unsigned int i = 0; i < length; i++) {
     unsigned int max_index = i;
     for (unsigned int j = i + 1; j < length; j++) {
