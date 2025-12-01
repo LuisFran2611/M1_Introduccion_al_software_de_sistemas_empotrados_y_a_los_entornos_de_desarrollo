@@ -9,13 +9,14 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c
+ * @brief Implementa funciones básicas de estadística sobre un arreglo de enteros sin signo.
  *
- * <Add Extended Description Here>
+ * Calcula mínimo, máximo, media y mediana de un arreglo de bytes sin signo,
+ * ordena el arreglo de mayor a menor y muestra los resultados por consola.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Luis Francisco Sanchez Turrion
+ * @date 2024-06-05
  *
  */
 
@@ -27,7 +28,7 @@
 /* Size of the Data Set */
 #define SIZE (40)
 
-void main() {
+int main(void) {
 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
@@ -35,9 +36,42 @@ void main() {
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+  printf("Vector original:\n");
+  print_array(test, SIZE);
+
+  /* Ordenamos y mostramos estadísticas */
+  sort_array(test, SIZE);
+  printf("\n Vector ordenado (mayor a menor):\n");
+  print_array(test, SIZE);
+
+  print_statistics(test, SIZE);
+
+  return 0;
+}
+
+void print_statistics(const unsigned char *array, unsigned int length) {
 
 }
 
-/* Add other Implementation File Code Here */
+void print_array(const unsigned char *array, unsigned int length) {
+
+}
+
+unsigned char find_median(const unsigned char *array, unsigned int length) {
+
+}
+
+unsigned char find_mean(const unsigned char *array, unsigned int length) {
+
+}
+
+unsigned char find_maximum(const unsigned char *array, unsigned int length) {
+
+}
+
+unsigned char find_minimum(const unsigned char *array, unsigned int length) {
+
+
+void sort_array(unsigned char *array, unsigned int length) {
+
+}
